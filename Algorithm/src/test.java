@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 
+// 프로그래머스에 있는 문제를 참고했습니다.
+
 public class test {
 	public static void main(String[] args) {
 		String[] participant = {"A","B","C","D"};
