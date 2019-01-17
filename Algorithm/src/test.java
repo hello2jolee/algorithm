@@ -19,18 +19,19 @@ class Solution {
 
 	public String solution(String[] participant, String[] completion) {
 		
-		ArrayList<String> list = new ArrayList<String>();
-        
-        for(String p : participant) 
-            list.add(p);
-        
-        for(String c : completion)
-            for(int i = 0; i<list.size(); i++)
-                if(list.get(i).equals(c))
-                    list.remove(list.get(i));
-        
-        answer = list.get(0);
-            
+		Arrays.sort(participant);
+        Arrays.sort(completion);
+
+        for(int i = 0; i<completion.length; i++) {
+            if(!completion[i].equals(participant[i])){
+                answer = participant[i];
+                break;
+            }
+            else {
+                answer = participant[participant.length-1];
+            }
+        }
+
         return answer;
     }
 }
